@@ -1,7 +1,7 @@
 # gtk_css
 
-This is a silly non-recommended tool that can help you pretend as if GTK exposed more
-properties over CSS, such as `hexpand` and `xalign`.
+This is a silly *non-recommended*, *heavily incomplete* tool that can help you pretend
+as if GTK exposed more properties over CSS, such as `hexpand` and `xalign`.
 
 ## Examples
 
