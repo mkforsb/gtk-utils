@@ -183,6 +183,9 @@ def path_to_css_selector(path):
     result = []
 
     for entry in path:
+        if len(result) > 0:
+            result.append(">")
+
         part = [entry["element_name"]]
 
         if entry["widget_name"] is not None:

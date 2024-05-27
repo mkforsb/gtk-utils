@@ -80,7 +80,7 @@ selectors:
 
 ### /tmp/de/style.css
 ```diff
-+ overlay frame#my-frame button.wide-button {
++ overlay > frame#my-frame > button.wide-button {
 +     gtk-hexpand: true;
 + }
 ```
