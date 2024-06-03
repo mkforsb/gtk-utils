@@ -7,15 +7,19 @@ element_names = {
     "GtkAdjustment": None,
     "GtkBox": "box",
     "GtkButton": "button",
+    "GtkCheckButton": "checkbutton",
     "GtkDrawingArea": "widget",
     "GtkDropDown": "dropdown",
     "GtkEntry": "entry",
     "GtkEntryBuffer": None,
+    "GtkFlowBox": "flowbox",
+    "GtkFlowBoxChild": "flowboxchild",
     "GtkFrame": "frame",
     "GtkGrid": "grid",
     "GtkHeaderBar": "headerbar",
     "GtkLabel": "label",
     "GtkListBox": "list",
+    "GtkListBoxRow": "row",
     "GtkListView": "listview",
     "GtkMenuButton": "menubutton",
     "GtkNotebook": "notebook",
@@ -28,6 +32,7 @@ element_names = {
     "GtkStackPage": None,
     "GtkStackSwitcher": "stackswitcher",
     "GtkStringList": None,
+    "GtkWindow": "window",
 }
 
 cssable_props = [
