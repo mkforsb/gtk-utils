@@ -70,6 +70,26 @@ def css_widget_name(node):
         return child.text
 
 
+def css_selector_to_path(sel):
+    result = []
+
+    for fragment in re.split(r"\s+", sel):
+        fragment_result = {"element_name": None, "widget_name": None, "classes": []}
+
+        for req in requirements(fragment):
+            match req[0]:
+                case "element_name":
+                    fragment_result["element_name"] = req[1]
+                case "widget_name":
+                    fragment_result["widget_name"] = req[1]
+                case "class":
+                    _ = fragment_result["classes"].append(req[1])
+
+        result.append(fragment_result)
+
+    return result
+
+
 def etree_traverse(tree, f, path=None):
     if tree.tag == "object" and css_element_name(tree) is not None:
         new_path = ([] if path is None else path) + (
@@ -84,6 +104,12 @@ def etree_traverse(tree, f, path=None):
         f(tree, new_path)
     else:
         new_path = path
+
+    if len(tree) > 0 and "function Comment" in str(tree[0].tag):
+        if match := re.search(r"css-parents\((.+?)\)", tree[0].text):
+            new_path = ([] if new_path is None else new_path) + css_selector_to_path(
+                match.group(1)
+            )
 
     for child in tree:
         etree_traverse(child, f, new_path)
