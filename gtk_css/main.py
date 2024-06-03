@@ -100,7 +100,7 @@ def take_while(text, f):
 
 
 def requirements(fragment):
-    if fragment == "":
+    if fragment == "" or fragment.startswith(":"):
         return []
     elif fragment.startswith("#"):
         (widget_name, tail) = take_while(
