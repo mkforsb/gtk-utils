@@ -204,6 +204,7 @@ def path_to_css_selector(path):
 def compile(css, xml, target_dir):
     with open(f"{target_dir}/{os.path.basename(css[0])}", "w+") as out:
         out.write(render_css(css[1], include="nongtk"))
+        out.write("\n")
 
     def match_add_props(node, path):
         for rule in css[1]:
@@ -271,6 +272,7 @@ def decompile(css, xml, target_dir):
 
     with open(f"{target_dir}/{os.path.basename(css[0])}", "w+") as out:
         out.write(render_css(css[1], include="all"))
+        out.write("\n")
 
 
 def main(args):
