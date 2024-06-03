@@ -50,7 +50,6 @@ cssable_props = [
     "show-text",
     "valign",
     "vexpand",
-    "visible",
     "wide-handle",
     "width-request",
     "height-request",
