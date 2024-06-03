@@ -281,8 +281,6 @@ def main(args):
     target_dir = None
     action = None
 
-    parser = ET.XMLParser(target=ET.TreeBuilder(insert_comments=True))
-
     for arg in args:
         if arg == "compile":
             action = "compile"
@@ -293,6 +291,7 @@ def main(args):
                 with open(arg) as fd:
                     css = (arg, pseudoparse_css(fd.read()))
             else:
+                parser = ET.XMLParser(target=ET.TreeBuilder(insert_comments=True))
                 xml.append((arg, ET.parse(arg, parser)))
         elif os.path.isdir(arg):
             target_dir = arg
