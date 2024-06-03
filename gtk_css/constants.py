@@ -15,7 +15,7 @@ element_names = {
     "GtkGrid": "grid",
     "GtkHeaderBar": "headerbar",
     "GtkLabel": "label",
-    "GtkListBox": "listbox",
+    "GtkListBox": "list",
     "GtkListView": "listview",
     "GtkMenuButton": "menubutton",
     "GtkNotebook": "notebook",
