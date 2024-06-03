@@ -266,7 +266,7 @@ def decompile(css, xml, target_dir):
                 matched_in_css = True
 
                 for prop in target_props:
-                    rule["props"][prop.attrib["name"]] = prop.text.strip()
+                    rule["props"][f"gtk-{prop.attrib['name']}"] = prop.text.strip()
 
         if not matched_in_css:
             css[1].append(
